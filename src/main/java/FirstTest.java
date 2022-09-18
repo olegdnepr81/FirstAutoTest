@@ -44,7 +44,17 @@ public class FirstTest {
         Thread.sleep(2000);
         driver.findElement(amount200).click();
         Thread.sleep(2000);
-        driver.findElement(amount).sendKeys(Keys.COMMAND + "A"); // срабатывает не всегда но изменив заглавную на прописную работает снова и обратно
+        String selectAll;
+        String os = System.getProperty("os.name");
+
+        // Выбор операционой системы
+        if (os.equals("WINDOWS")){
+            selectAll=Keys.chord(Keys.CONTROL, "A");
+        }else{
+            selectAll=Keys.chord(Keys.COMMAND, "A");
+        }
+
+        driver.findElement(amount).sendKeys(selectAll); // срабатывает не всегда но изменив заглавную на прописную работает снова и обратно
         driver.findElement(amount).sendKeys(Keys.DELETE);
         Thread.sleep(2000);
         driver.findElement(amount).sendKeys("777");
