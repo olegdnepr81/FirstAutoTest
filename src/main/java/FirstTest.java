@@ -67,10 +67,10 @@ public class FirstTest {
         driver.switchTo().window((String)driver.getWindowHandles().toArray()[1]);
         //ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         //driver.switchTo().window(tabs2.get(1));
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         System.out.println("Титул Страница 2: " + driver.getTitle());
         Assertions.assertEquals("Умови та правила", driver.getTitle());
-        Thread.sleep(4000);
+        Thread.sleep(1000);
         driver.close();
         //driver.switchTo().window(tabs2.get(0));
     // --------------------------------------------------------------------------------------------
@@ -95,6 +95,7 @@ public class FirstTest {
         Assertions.assertEquals("+380996010099", resultPhone);
 //      Сравнение суммы пополнения мобильного
         Assertions.assertEquals("777 UAH", resultAmount);
+        Thread.sleep(2000);
         driver.quit();
     }
 }
