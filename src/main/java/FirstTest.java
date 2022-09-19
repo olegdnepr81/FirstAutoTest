@@ -35,15 +35,15 @@ public class FirstTest {
 
         driver.get(P2P_URL);
         driver.findElement(phoneNumber).sendKeys("996010099");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(amount50).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(amount100).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(amount150).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.findElement(amount200).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         String selectAll;
         String os = System.getProperty("os.name");
 
@@ -54,7 +54,7 @@ public class FirstTest {
             selectAll=Keys.chord(Keys.COMMAND, "A");
         }
 
-        driver.findElement(amount).sendKeys(selectAll); // срабатывает не всегда но изменив заглавную на прописную работает снова и обратно
+        driver.findElement(amount).sendKeys(selectAll);
         driver.findElement(amount).sendKeys(Keys.DELETE);
         Thread.sleep(2000);
         driver.findElement(amount).sendKeys("777");
@@ -95,6 +95,6 @@ public class FirstTest {
         Assertions.assertEquals("+380996010099", resultPhone);
 //      Сравнение суммы пополнения мобильного
         Assertions.assertEquals("777 UAH", resultAmount);
-//      driver.close();
+        driver.quit();
     }
 }
